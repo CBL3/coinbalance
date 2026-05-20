@@ -11,7 +11,7 @@ def test_health_endpoint():
     payload = response.get_json()
     assert payload["service"] == "coinbalance-api"
     assert payload["status"] == "ok"
-    assert payload["version"] == "0.3.0-alpha"
+    assert payload["version"] == "0.4.0-alpha"
     assert payload["api_version"] == "v1"
     assert payload["project"] == "coinbalance"
     assert payload["regulated_activity"] is False

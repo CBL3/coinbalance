@@ -1,7 +1,7 @@
 # Documentação CoinBalance
 
 Data: 2026-05-20  
-Versão: 0.3.0-alpha  
+Versão: 0.4.0-alpha  
 Status: Vigente  
 Classificação: Documento interno
 

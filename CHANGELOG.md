@@ -4,6 +4,15 @@ Todas as mudanças relevantes da CoinBalance devem ser registradas neste arquivo
 
 O projeto segue Semantic Versioning 2.0.0.
 
+## [0.4.0-alpha] - 2026-05-20
+
+### Adicionado
+
+- Modelos iniciais `ReconciliationRule` e `ReconciliationRun` para suportar regras de reconciliação e execuções.
+- Endpoints de criação e listagem de regras (`/api/v1/reconciliation/rules`) e execuções (`/api/v1/reconciliation/runs`).
+- Fluxo de execução de reconciliação que persiste `ReconciliationRun` e `ReconciliationFinding` e grava auditoria associada.
+- Testes de permissão, escopo organizacional e auditoria para regras e execuções de reconciliação.
+
 ## [0.3.0-alpha] - 2026-05-20
 
 ### Adicionado
