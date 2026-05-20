@@ -1,0 +1,8 @@
+Nome,Papel,Email,Responsabilidade
+Sponsor Executivo,Sponsor,sponsor@empresa.com,Remover impedimentos
+Product Owner,PO,po@empresa.com,Priorizar backlog
+Tech Lead,Arquiteto,techlead@empresa.com,Arquitetura e integração
+ML Engineer,Engenheiro ML,ml@empresa.com,Pipelines e modelos
+Infra/DevOps,Infra,infra@empresa.com,Provisionamento e segurança
+Compliance,Legal,compliance@empresa.com,Políticas e auditoria
+Customer Success,CS,cs@empresa.com,Piloto e ROI

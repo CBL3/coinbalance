@@ -1,0 +1,12 @@
+Métrica,Valor Inicial,Valor Final,Delta,Observações
+Tempo para valor (dias),,,,"Do kickoff ao primeiro workflow validado"
+Tempo por workflow (min),,,,"Antes vs depois do Gêmeo Digital"
+Precisão operacional (%),,,,"Saídas aceitas sem retrabalho relevante"
+Adoção (%),,,,"Usuários-alvo ativos semanalmente"
+MTTR (h),,,,"Tempo médio de recuperação em incidente"
+Replay success rate (%),,,,"Estados reconstruídos sem divergência"
+Custo por workflow (R$),,,,"Modelos, infraestrutura e operação"
+Taxa de fallback (%),,,,"Chamadas redirecionadas por falha, risco ou custo"
+Taxa de aprovação humana (%),,,,"Workflows que exigiram aprovação"
+Incidentes SEV1 (#),,,,"Meta do piloto: zero"
+ROI (R$),,,,"Ganho estimado menos custo total do piloto"

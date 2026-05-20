@@ -1,0 +1,3 @@
+Sponsor executivo: sponsor@empresa.com
+PO: po@empresa.com
+Tech Lead: techlead@empresa.com
