@@ -4,6 +4,25 @@ Todas as mudanças relevantes da CoinBalance devem ser registradas neste arquivo
 
 O projeto segue Semantic Versioning 2.0.0.
 
+## [0.3.0-alpha] - 2026-05-20
+
+### Adicionado
+
+- Endpoints de ingestão de evidências e execução de reconciliação (`/api/v1/evidence`, `/api/v1/reconciliation/run`, `/api/v1/reconciliation/findings`).
+- Permissões RBAC para `evidence:upload`, `reconciliation:run` e `reconciliation:read`.
+- Serialização de domínios `Evidence` e `ReconciliationFinding`.
+- Auditoria de upload de evidência e execução de reconciliação via `AuditEvent`.
+- Testes de permissão e escopo organizacional para ingestão e reconciliação.
+
+### Atualizado
+
+- Versão do projeto para `0.3.0-alpha`.
+- Documentação principal e arquitetura para refletir o novo escopo de ingestão e reconciliação.
+
+### Corrigido
+
+- Ajustes de fluxo de autorização para organização no upload de evidência e execução de reconciliação.
+
 ## [0.2.0-alpha] - 2026-05-20
 
 ### Adicionado

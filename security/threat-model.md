@@ -1,13 +1,13 @@
 # Modelo Inicial de Ameaças
 
 Data: 2026-05-20
-Versão: 0.2.0-alpha
+Versão: 0.3.0-alpha
 Status: Inicial  
 Classificação: Documento interno de segurança
 
 ## Escopo
 
-Fase 1 da CoinBalance: identidade, RBAC e auditoria persistente sobre backend Flask modular, API versionada (`/api/v1/health`, `/api/v1/identity/me`, `/api/v1/audit/events`) e políticas de segurança.
+Fase 2 da CoinBalance: ingestão e reconciliação informacional inicial com backend Flask modular, API versionada (`/api/v1/health`, `/api/v1/identity/me`, `/api/v1/audit/events`, `/api/v1/evidence`, `/api/v1/reconciliation/run`, `/api/v1/reconciliation/findings`) e políticas de segurança.
 
 ## Ativos
 
@@ -31,7 +31,7 @@ Fase 1 da CoinBalance: identidade, RBAC e auditoria persistente sobre backend Fl
 
 ## Fora do escopo atual
 
-- Upload de dados.
-- Reconciliação funcional.
+- Operações financeiras reguladas, custódia, liquidação ou compensação.
+- Reconciliação autônoma de saldos e fechamento contábil pleno.
 
-Esses itens permanecem fora do escopo na fase `0.2.0-alpha` e entrarão a partir da fase `0.3.0-alpha`.
+Esses itens permanecem fora do escopo na fase `0.3.0-alpha`, que se concentra em ingestão controlada, evidências trianguladas e registro de findings de reconciliação.
