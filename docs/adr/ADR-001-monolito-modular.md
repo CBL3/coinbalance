@@ -1,7 +1,7 @@
 # ADR-001: Monólito modular
 
 Status: Aprovado  
-Data: 2026-05-19
+Data: 2026-05-20
 
 ## Contexto
 

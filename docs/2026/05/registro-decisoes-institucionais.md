@@ -1,7 +1,7 @@
 # Registro de Decisões Institucionais — Maio/2026
 
-Data: 2026-05-19  
-Versão: 0.1.0-alpha  
+Data: 2026-05-20
+Versão: 0.2.0-alpha
 Status: Histórico  
 Classificação: Documento interno institucional
 

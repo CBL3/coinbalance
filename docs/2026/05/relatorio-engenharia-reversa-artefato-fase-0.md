@@ -1,6 +1,6 @@
 # Relatório de Engenharia Reversa — Artefato Fase 0
 
-Data: 2026-05-19  
+Data: 2026-05-20
 Artefato analisado: `coinbalance-fase-0-manifesto-primordial (1).zip`  
 Status: Histórico  
 Classificação: Documento interno técnico

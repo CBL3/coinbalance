@@ -1,7 +1,7 @@
 # Checklist de Demo
 
-Data: 2026-05-19  
-Versão: 0.1.0-alpha  
+Data: 2026-05-20
+Versão: 0.2.0-alpha
 Status: Inicial  
 Classificação: Documento interno de produto
 

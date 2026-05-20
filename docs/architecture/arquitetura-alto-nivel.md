@@ -1,13 +1,13 @@
 # Arquitetura alvo (alto nível)
 
-Data: 2026-05-19  
-Versão: 0.1.0-alpha  
+Data: 2026-05-20
+Versão: 0.2.0-alpha
 Status: Vigente  
 Classificação: Documento interno de arquitetura
 
 ## Leitura atual do projeto
 
-O repositório atual já possui uma Fase 0 executável e documentada. A base técnica inclui backend Flask modular, API versionada, Docker Compose, CI inicial, documentação institucional e controles de segurança/compliance.
+O repositório atual já possui uma Fase 0 executável e documentada e está em fase 1 de identidade, RBAC e auditoria persistente. A base técnica inclui backend Flask modular, API versionada, Docker Compose, CI inicial, documentação institucional e controles de segurança/compliance.
 
 A stack alvo segue organizada em:
 

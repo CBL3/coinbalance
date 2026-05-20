@@ -1,13 +1,13 @@
 # Política de Desenvolvimento Seguro
 
-Data: 2026-05-19  
-Versão: 0.1.0-alpha  
+Data: 2026-05-20
+Versão: 0.2.0-alpha
 Status: Vigente  
 Classificação: Documento interno de segurança
 
 ## Objetivo
 
-Definir controles mínimos para desenvolvimento seguro da CoinBalance desde a Fase 0.
+Definir controles mínimos para desenvolvimento seguro da CoinBalance desde a fase inicial.
 
 ## Controles mínimos
 

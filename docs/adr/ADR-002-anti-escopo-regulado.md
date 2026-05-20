@@ -1,7 +1,7 @@
 # ADR-002: Anti-escopo regulado
 
 Status: Aprovado  
-Data: 2026-05-19
+Data: 2026-05-20
 
 ## Contexto
 

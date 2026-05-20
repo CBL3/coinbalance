@@ -1,7 +1,7 @@
 # ADR-003: Flask e PostgreSQL
 
 Status: Aprovado  
-Data: 2026-05-19
+Data: 2026-05-20
 
 ## Contexto
 

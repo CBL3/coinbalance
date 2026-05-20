@@ -1,7 +1,7 @@
 # Nginx
 
-Data: 2026-05-19  
-Versão: 0.1.0-alpha  
+Data: 2026-05-20
+Versão: 0.2.0-alpha
 Status: Reservado  
 Classificação: Documento interno de infraestrutura
 
