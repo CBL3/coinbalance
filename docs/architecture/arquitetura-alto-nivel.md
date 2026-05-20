@@ -1,7 +1,7 @@
 # Arquitetura alvo (alto nível)
 
 Data: 2026-05-20
-Versão: 0.3.0-alpha
+Versão: 0.4.0-alpha
 Status: Vigente  
 Classificação: Documento interno de arquitetura
 
@@ -12,7 +12,7 @@ O repositório atual já possui uma Fase 0 executável e documentada e está em 
 A stack alvo segue organizada em:
 
 - Backend Flask em `backend/app`.
-- API `/api/v1/health`, `/api/v1/institutional/scope` e `/api/v1/hardware/interface`.
+- API `/api/v1/health`, `/api/v1/institutional/scope`, `/api/v1/hardware/interface` e os novos endpoints de reconciliação `/api/v1/reconciliation/rules`, `/api/v1/reconciliation/runs`, `/api/v1/reconciliation/findings`, `/api/v1/reconciliation/run`.
 - PostgreSQL como persistência alvo.
 - Redis como infraestrutura planejada para filas/cache.
 - Docker Compose em `docker-compose.yml`.

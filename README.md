@@ -1,6 +1,6 @@
 # CoinBalance
 
-**Versão atual:** `0.3.0-alpha`  
+**Versão atual:** `0.4.0-alpha`  
 **Status:** Fase 2 — Ingestão e reconciliação informacional inicial  
 **Classificação:** Documento estratégico interno / scaffold técnico inicial
 **Padrão documental:** [docs/documentation-standard.md](docs/documentation-standard.md)
@@ -23,6 +23,7 @@ Qualquer aproximação com atividade regulada exige ADR próprio, análise jurí
 - Documentação institucional e evidências: `docs/YYYY/MM/`
 - ADRs: `docs/adr/`
 - API inicial: `/api/v1/`
+- Novos endpoints de reconciliação: `/api/v1/reconciliation/rules`, `/api/v1/reconciliation/runs`, `/api/v1/reconciliation/findings`, `/api/v1/reconciliation/run`
 
 ## Stack inicial
 
@@ -42,7 +43,7 @@ python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r backend/requirements.txt
 $env:DATABASE_URL='sqlite:///:memory:'
-$env:COINBALANCE_VERSION='0.3.0-alpha'
+$env:COINBALANCE_VERSION='0.4.0-alpha'
 python -m flask --app backend/wsgi.py run --host 127.0.0.1 --port 8000
 ```
 
@@ -58,7 +59,7 @@ Resposta esperada:
 {
   "service": "coinbalance-api",
   "status": "ok",
-  "version": "0.3.0-alpha",
+  "version": "0.4.0-alpha",
   "api_version": "v1",
   "regulated_activity": false
 }
