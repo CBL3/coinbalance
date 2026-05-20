@@ -15,3 +15,15 @@ class ReconciliationFinding(db.Model):
     description = db.Column(db.Text, nullable=False)
     metadata_json = db.Column(db.JSON, nullable=False, default=dict)
     created_at = db.Column(db.DateTime(timezone=True), nullable=False, default=lambda: datetime.now(timezone.utc))
+
+    def to_dict(self) -> dict:
+        return {
+            "id": self.id,
+            "organization_id": self.organization_id,
+            "rule_code": self.rule_code,
+            "severity": self.severity,
+            "status": self.status,
+            "description": self.description,
+            "metadata": self.metadata_json,
+            "created_at": self.created_at.isoformat() if self.created_at else None,
+        }

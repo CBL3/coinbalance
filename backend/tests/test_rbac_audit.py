@@ -46,15 +46,20 @@ def identity_fixture(app):
     org_b = Organization(legal_name="Tenant B", display_name="Tenant B")
 
     audit_read = Permission(name="audit:read", description="Read audit trails")
+    evidence_upload = Permission(name="evidence:upload", description="Upload evidence")
+    reconciliation_read = Permission(name="reconciliation:read", description="Read reconciliation findings")
+    reconciliation_run = Permission(name="reconciliation:run", description="Run reconciliation tasks")
     system_admin_permission = Permission(name="system:admin", description="System admin")
 
     auditor_role = Role(name="Auditor", organization=org_a)
-    auditor_role.permissions.append(audit_read)
+    auditor_role.permissions.extend([audit_read, reconciliation_read])
 
     viewer_role = Role(name="Viewer", organization=org_a)
 
     admin_role = Role(name="System Administrator")
-    admin_role.permissions.extend([audit_read, system_admin_permission])
+    admin_role.permissions.extend(
+        [audit_read, evidence_upload, reconciliation_read, reconciliation_run, system_admin_permission]
+    )
 
     auditor = User(
         organization=org_a,
@@ -140,7 +145,7 @@ def test_identity_me_returns_authenticated_user(client, identity_fixture):
     payload = response.get_json()
     assert payload["email"] == "auditor@example.com"
     assert payload["organization_id"] == identity_fixture["org_a"].id
-    assert payload["permissions"] == ["audit:read"]
+    assert payload["permissions"] == ["audit:read", "reconciliation:read"]
 
 
 def test_audit_events_are_scoped_to_user_organization(client, identity_fixture):
