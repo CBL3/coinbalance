@@ -34,6 +34,10 @@ Validar a viabilidade técnica da CoinBalance como plataforma auditável de inte
 - Estrutura documental segue `docs/YYYY/MM` e `docs/adr`.
 - Novas funcionalidades têm checklist de risco antes da implementação.
 
+## Atualização 2026-05-20
+
+A versão `0.2.0-alpha` introduziu usuários, organizações, papéis, permissões, RBAC, `AuditEvent` persistente, migration inicial e testes de isolamento organizacional.
+
 ## Próxima fase técnica
 
-A versão `0.2.0-alpha` deve introduzir usuários, organizações, papéis, permissões, RBAC e `AuditEvent` persistente.
+A versão `0.3.0-alpha` deve iniciar fontes de dados e ingestão controlada, mantendo classificação de dados, hashes, logs de importação e auditoria por organização.

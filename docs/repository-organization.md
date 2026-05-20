@@ -11,7 +11,7 @@ A raiz deve conter apenas artefatos de entrada, configuração e execução:
 
 - `README.md`, `MANIFESTO_PRIMORDIAL.md`, `VERSION`, `CHANGELOG.md`, `PACKAGE_MANIFEST.json`.
 - Configuração: `.env.example`, `.gitignore`, `pyproject.toml`, `docker-compose.yml`.
-- Diretórios operacionais: `backend/`, `frontend/`, `infra/`, `security/`, `compliance/`, `docs/`, `.github/`.
+- Diretórios operacionais: `backend/`, `migrations/`, `frontend/`, `infra/`, `security/`, `compliance/`, `docs/`, `.github/`.
 
 Documentos de trabalho não devem ficar soltos na raiz.
 
@@ -20,6 +20,7 @@ Documentos de trabalho não devem ficar soltos na raiz.
 | Diretório | Uso |
 | --- | --- |
 | `backend/` | API Flask, modelos, testes e dependências do backend |
+| `migrations/` | Migrations Alembic/Flask-Migrate do schema relacional |
 | `frontend/` | Placeholder e futura camada de interface |
 | `infra/` | Docker, PostgreSQL, Nginx e infraestrutura local |
 | `security/` | Segurança operacional, segredos, threat model e incident response |

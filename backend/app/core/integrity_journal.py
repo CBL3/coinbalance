@@ -16,8 +16,8 @@ class IntegrityJournalEntry(db.Model):
         nullable=False,
         default=lambda: datetime.now(timezone.utc),
     )
-    organization_id = db.Column(db.String(36), nullable=True, index=True)
-    actor_id = db.Column(db.String(36), nullable=True, index=True)
+    organization_id = db.Column(db.String(36), db.ForeignKey("organizations.id"), nullable=True, index=True)
+    actor_id = db.Column(db.String(36), db.ForeignKey("users.id"), nullable=True, index=True)
     subject_type = db.Column(db.String(120), nullable=False, index=True)
     subject_id = db.Column(db.String(36), nullable=True, index=True)
     event_type = db.Column(db.String(120), nullable=False, index=True)

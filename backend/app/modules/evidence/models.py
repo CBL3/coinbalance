@@ -8,7 +8,7 @@ class Evidence(db.Model):
     __tablename__ = "evidence"
 
     id = db.Column(db.String(36), primary_key=True, default=lambda: str(uuid4()))
-    organization_id = db.Column(db.String(36), nullable=False, index=True)
+    organization_id = db.Column(db.String(36), db.ForeignKey("organizations.id"), nullable=False, index=True)
     title = db.Column(db.String(255), nullable=False)
     sha256_hash = db.Column(db.String(64), nullable=False, index=True)
     storage_uri = db.Column(db.String(1024), nullable=False)

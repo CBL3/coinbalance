@@ -1,7 +1,7 @@
 # CoinBalance
 
-**Versão inicial:** `0.1.0-alpha`  
-**Status:** Fase 0 — Fundação institucional e técnica  
+**Versão atual:** `0.2.0-alpha`  
+**Status:** Fase 1 — Identidade, RBAC e auditoria persistente inicial  
 **Classificação:** Documento estratégico interno / scaffold técnico inicial  
 **Padrão documental:** [docs/documentation-standard.md](docs/documentation-standard.md)
 
@@ -18,7 +18,7 @@ Qualquer aproximação com atividade regulada exige ADR próprio, análise jurí
 ## Decisões estruturantes
 
 - Raiz permanente do projeto: `coinbalance/`
-- Versão inicial do software: `0.1.0-alpha`
+- Versão atual do software: `0.2.0-alpha`
 - Versionamento do software: SemVer 2.0.0
 - Documentação institucional e evidências: `docs/YYYY/MM/`
 - ADRs: `docs/adr/`
@@ -29,6 +29,7 @@ Qualquer aproximação com atividade regulada exige ADR próprio, análise jurí
 - Backend: Flask application factory em `backend/app`.
 - Persistência alvo: PostgreSQL.
 - Extensões preparadas: Flask-SQLAlchemy e Flask-Migrate.
+- Migrations iniciais: Alembic/Flask-Migrate em `migrations/`.
 - Infra local: Docker Compose com backend, PostgreSQL e Redis.
 - CI: GitHub Actions em `.github/workflows/ci.yml`.
 - Documentação: `docs/YYYY/MM`, `docs/adr`, `security`, `compliance`.
@@ -41,7 +42,7 @@ python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r backend/requirements.txt
 $env:DATABASE_URL='sqlite:///:memory:'
-$env:COINBALANCE_VERSION='0.1.0-alpha'
+$env:COINBALANCE_VERSION='0.2.0-alpha'
 python -m flask --app backend/wsgi.py run --host 127.0.0.1 --port 8000
 ```
 
@@ -57,7 +58,7 @@ Resposta esperada:
 {
   "service": "coinbalance-api",
   "status": "ok",
-  "version": "0.1.0-alpha",
+  "version": "0.2.0-alpha",
   "api_version": "v1",
   "regulated_activity": false
 }
@@ -67,6 +68,20 @@ Escopo institucional:
 
 ```text
 GET http://127.0.0.1:8000/api/v1/institutional/scope
+```
+
+Identidade autenticada:
+
+```text
+GET http://127.0.0.1:8000/api/v1/identity/me
+Authorization: Bearer <jwt>
+```
+
+Eventos de auditoria por escopo organizacional:
+
+```text
+GET http://127.0.0.1:8000/api/v1/audit/events
+Authorization: Bearer <jwt>
 ```
 
 Interface HAL para eventos operacionais de hardware:
@@ -100,6 +115,7 @@ docker compose up --build
 
 ```text
 backend/                  API Flask, módulos de domínio e testes
+migrations/               Migrations Alembic/Flask-Migrate
 frontend/                 Placeholder controlado para camada futura
 infra/                    Docker, PostgreSQL e Nginx
 docs/2026/05/             Documentos temporais fundacionais

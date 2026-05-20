@@ -9,7 +9,7 @@ from app.modules.identity.seed_fase1 import run_seed
 @with_appcontext
 def init_db_command():
     """Executa as migrations (Alembic) e popula o banco de dados com a fundação (Seed)."""
-    click.echo("==> LÓGICA: Aplicando migrations no PostgreSQL...")
+    click.echo("==> LÓGICA: Aplicando migrations do banco configurado...")
     upgrade()
     click.echo("==> LÓGICA: Migrations aplicadas com sucesso.")
     

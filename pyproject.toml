@@ -1,6 +1,6 @@
 [project]
 name = "coinbalance"
-version = "0.1.0a0"
+version = "0.2.0a0"
 description = "CoinBalance - plataforma tecnológica de inteligência operacional, governança, rastreabilidade e reconciliação informacional."
 requires-python = ">=3.11"
 authors = [{ name = "CoinBalance" }]

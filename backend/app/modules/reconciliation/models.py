@@ -8,7 +8,7 @@ class ReconciliationFinding(db.Model):
     __tablename__ = "reconciliation_findings"
 
     id = db.Column(db.String(36), primary_key=True, default=lambda: str(uuid4()))
-    organization_id = db.Column(db.String(36), nullable=False, index=True)
+    organization_id = db.Column(db.String(36), db.ForeignKey("organizations.id"), nullable=False, index=True)
     rule_code = db.Column(db.String(120), nullable=False, index=True)
     severity = db.Column(db.String(50), nullable=False, default="medium")
     status = db.Column(db.String(50), nullable=False, default="new")

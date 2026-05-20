@@ -17,7 +17,7 @@ A stack alvo segue organizada em:
 - Redis como infraestrutura planejada para filas/cache.
 - Docker Compose em `docker-compose.yml`.
 - CI em `.github/workflows/ci.yml`.
-- Scaffolds de identidade, RBAC, autenticação JWT e diário de integridade por hash.
+- Identidade, RBAC, autenticação JWT, auditoria persistente e diário de integridade por hash em versão inicial.
 - Orquestração de agentes para um MVP de Gêmeo Digital.
 - Roteamento híbrido entre modelos proprietários e open source.
 - Pipeline de telemetria, feedback, RLAIF/RLHF e auditoria.
@@ -91,8 +91,8 @@ Resiliência aqui significa conseguir reconstruir a camada lógica de uma unidad
 
 ## Lacunas atuais da arquitetura alvo
 
-- Ainda não há persistência real, migrations ou banco inicial.
-- Ainda não há autenticação, RBAC ou isolamento multi-organização completos e aplicados às rotas de negócio.
+- Já há migration inicial para identidade, auditoria, evidências, reconciliação e diário de integridade; falta validar continuamente em PostgreSQL real.
+- Já há autenticação, RBAC e isolamento organizacional em rotas protegidas iniciais; falta aplicar o padrão aos próximos módulos de negócio.
 - Ainda não há orquestrador de agentes executável.
 - Ainda não há ingestão, reconciliação funcional ou Evidence Vault.
 - Ainda não há avaliação automatizada de prompts/modelos.

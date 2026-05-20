@@ -1,5 +1,6 @@
-import jwt
 from functools import wraps
+
+import jwt
 from flask import abort, current_app, g, request
 
 from app.extensions import db
@@ -14,7 +15,7 @@ def authenticate_request():
     """
     g.user = None
     auth_header = request.headers.get("Authorization")
-    
+
     if not auth_header or not auth_header.startswith("Bearer "):
         return
 
@@ -40,25 +41,36 @@ def requires_permission(permission_name: str):
         @wraps(f)
         def decorated_function(*args, **kwargs):
             user = getattr(g, "user", None)
-            
+
             # 1. Validação de Identidade (Autenticação)
-            if not user:
+            if not user or not user.is_active:
                 current_app.logger.warning(
                     f"Acesso negado: Tentativa anônima de acessar rota protegida ({permission_name})."
                 )
                 abort(401, description="Autenticação requerida.")
 
             # 2. Travessia do Grafo de Autorização
-            has_permission = any(
-                perm.name == permission_name 
-                for role in user.roles 
-                for perm in role.permissions
-            )
-            
-            if not has_permission:
+            if not user.has_permission(permission_name):
                 current_app.logger.warning(f"Acesso negado: Usuário '{user.id}' não possui '{permission_name}'.")
                 abort(403, description=f"Privilégios insuficientes. Necessário: {permission_name}")
 
             return f(*args, **kwargs)
         return decorated_function
     return decorator
+
+
+def requires_auth(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        user = getattr(g, "user", None)
+        if not user or not user.is_active:
+            abort(401, description="Autenticação requerida.")
+        return f(*args, **kwargs)
+
+    return decorated_function
+
+
+def require_organization_access(organization_id: str | None) -> None:
+    user = getattr(g, "user", None)
+    if not user or not user.can_access_organization(organization_id):
+        abort(403, description="Organização fora do escopo autorizado.")

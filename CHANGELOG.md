@@ -4,7 +4,17 @@ Todas as mudanças relevantes da CoinBalance devem ser registradas neste arquivo
 
 O projeto segue Semantic Versioning 2.0.0.
 
-## [Não lançado]
+## [0.2.0-alpha] - 2026-05-20
+
+### Adicionado
+
+- Migration inicial Alembic/Flask-Migrate para organizações, usuários, papéis, permissões, auditoria, evidências, reconciliação e diário de integridade.
+- Endpoint autenticado `/api/v1/identity/me`.
+- Endpoint protegido `/api/v1/audit/events` com RBAC e isolamento por organização.
+- Helpers de permissão, escopo organizacional e serialização para `User`, `Role`, `Permission` e `Organization`.
+- Registro persistente de `AuditEvent` via `AuditEvent.record_event`.
+- Testes de autenticação, autorização, isolamento organizacional e acesso administrativo.
+- ADR-005 para identidade, RBAC e auditoria persistente.
 
 ### Corrigido
 
@@ -12,7 +22,7 @@ O projeto segue Semantic Versioning 2.0.0.
 - Inclusão explícita de `PyJWT` nas dependências do backend.
 - Correção do caminho de bootstrap do seed fundacional de identidade quando executado diretamente.
 
-### Adicionado
+### Mantido
 
 - Testes do diário de integridade.
 - Documentação inicial da interface HAL em `README.md`.
